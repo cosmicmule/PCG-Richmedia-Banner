@@ -1,80 +1,1044 @@
 // style.less
 // =============================================================================
 
-    @adWidth:   300px;
+    @adWidth:   970px;
     @adHeight:  250px;
 
     html, body {
-        width: 100%;
-        height: 100%;
+        width: @adWidth;
+        height: @adHeight;
         font-family: Arial, sans-serif;
         margin: 0;
         -webkit-backface-visibility: hidden;
     }
 
-    button {
-        background-color: #0068FF;
-        border: none;
-        color: #FFF;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
-        font-size: 12px;
-        outline: none;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        user-select: none;
-
-        transition: all 350ms linear;
-
-        &:hover, &:active {
-            color: #FAF000;
-            background-color: #333;
-            transition: all 350ms linear;
-        }
-    }
-
-    .label {
-        color: #0D2A4D;
-        position: absolute;
-        margin-left: 10px;
-        top: 35px;
-    }
-
     #ad {
-        width: @adWidth;
-        height: @adHeight;
+        width: (@adWidth - 2);
+        height: (@adHeight - 2);
         display: block;
-        border: 1px solid #000;
         overflow: hidden;
         user-select: none;
-    }
+        
+            #banner {
+                width: inherit;
+                height: inherit;
+                position: absolute;
+                overflow: hidden;
+                border: 1px solid #000;
+                background:black;
 
-    #banner {
-        width: @adWidth;
-        height: @adHeight;
-        position: absolute;
-        display: block;
-        background: #fff url("../images/logo.png") 10px 10px no-repeat;
-        overflow: hidden;
-    }
+                #intro{
+                    width: 680px;
+                    height: 250px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    opacity:1;
 
-    .buttons {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-    }
+                        #videoBlock{
+                            width: 680px;
+                            height: 250px;
+                            position: absolute;
+                            top: 0px;
+                            left: 1px;
+                            z-index:10;
+                            opacity:1;
 
-    .button {
-        height: 26px;
-        width: 108px;
-    }
+                            #video{
+                                width: 682px;
+                                height: 250px;
+                                position: absolute;
+                                left:-1px;
+                            }
+                        }
 
-    .label {
-        font-size: 14px;
-        top: 65px;
-    }
 
-    .collapsed .buttons {
-        bottom: 30px;
-        left: 10px;
-    }
+                }
+
+                #arrowNav{
+                    width: 680px;
+                    height: 250px;
+                    position: absolute;
+                    top: 100px;
+                    left: 0px;
+                    z-index:250;
+                    opacity:0;
+
+                    #left{
+                        width: 340px;
+                        height: 132px;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        background:url("../images/arrow_left.png") 14px 33px no-repeat;
+                        cursor:pointer;
+                        -webkit-tap-highlight-color: rgba(0,0,0,0);
+                    }
+                    #right{
+                        width: 340px;
+                        height: 132px;
+                        position: absolute;
+                        top: 0;
+                        right: 0px;
+                        background:url("../images/arrow_right.png") 313px 33px no-repeat;
+                        -webkit-tap-highlight-color: rgba(0,0,0,0);
+                        cursor:pointer;
+
+
+                    }
+
+                }
+                
+                #sidenav{
+
+                        width: 248px;
+                        height: 147px;
+                        position: absolute;
+                        top: 20px;
+                        left: 698px;
+                        z-index: 422;
+
+                        #logo{
+                            width: 200px;
+                            height: 60px;
+                            position: absolute;
+                            top: 160px;
+                            left: 29px;
+                            background: url("../images/mc_logo.png") center 2px no-repeat;
+                        }
+
+                            #navigation{
+                                width: 271px;
+                                height: 167px;
+                                position: absolute;
+                                top: 22px;
+                                left: -12px;
+                                overflow:hidden;
+                                transform: translateZ(0);
+                                backface-visibility: hidden;
+
+
+                                #nav_1{
+                                    width: 214px;
+                                    height: 10px;
+                                    position: absolute;
+                                    top: 0px;
+                                    left: 15px;
+                                    opacity: 1;
+                                    z-index:300;
+
+                                        #nav_1_header{
+                                            width: 244px;
+                                            height: inherit;
+                                            position: absolute;
+                                            top: 0px;
+                                            left: 5px;
+                                            transform:scale(.9);
+                                            background: url("../images/navHeading.png") center -21px no-repeat;
+                                            opacity:1;
+                                            webkit-tap-highlight-color: rgba(0,0,0,0);
+                                            cursor:pointer;
+
+                            
+                                        }
+
+                                        #nav_1_galleryHolder{
+                                            width: 214px;
+                                            height: 0px;
+                                            position: relative;
+                                            top: 19px;
+                                            left: 49px;
+                                            overflow:hidden;
+                                            opacity:1;
+
+                                                #thumbnail_1{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 5px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") 0 0 no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_2{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 54px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -36px 0 no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_3{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 101px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -70px 0 no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #nav_1_arrow{
+                                                    width: 7px;
+                                                    height: 6px;
+                                                    position: absolute;
+                                                    top: 50px;
+                                                    left: 15px;
+                                                    background:url("../images/arrow.png") center top no-repeat;
+                                                    
+                                                }
+                                        }
+
+                                }
+
+                                #nav_2{
+                                    width: 214px;
+                                    height: 10px;
+                                    position: absolute;
+                                    top:5px;
+                                    left: 15px;
+                                    opacity: 1;
+
+                                        #nav_2_header{
+                                            width: 244px;
+                                            height: inherit;
+                                            position: absolute;
+                                            top: 16px;
+                                            left: 5px;
+                                            transform:scale(.9);
+                                            background: url("../images/navHeading.png") center -40px no-repeat;
+                                            opacity:1;
+                                            webkit-tap-highlight-color: rgba(0,0,0,0);
+                                            cursor:pointer;
+                                            
+                                        }
+
+                                        #nav_2_galleryHolder{
+                                            width: 214px;
+                                            height: 0px;
+                                            position: relative;
+                                            top: 36px;
+                                            left: 49px;
+                                            overflow:hidden;
+
+                                                #thumbnail_4{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 5px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") 0 -35px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_5{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 54px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -36px -35px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_6{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 101px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -70px -35px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #nav_2_arrow{
+                                                    width: 7px;
+                                                    height: 6px;
+                                                    position: absolute;
+                                                    top: 50px;
+                                                    left: 15px;
+                                                    background:url("../images/arrow.png") center top no-repeat;
+                                                    
+                                                }
+                                        }
+
+
+                                }
+
+                                #nav_3{
+                                    width: 214px;
+                                    height: 10px;
+                                    position: absolute;
+                                    top:9px;
+                                    left: 15px;
+                                    opacity: 1;
+
+                                        #nav_3_header{
+                                            width: 244px;
+                                            height: inherit;
+                                            position: absolute;
+                                            top: 31px;
+                                            left: 5px;
+                                            transform:scale(.9);
+                                            background: url("../images/navHeading.png") center -57px no-repeat;
+                                            opacity:1;
+                                            webkit-tap-highlight-color: rgba(0,0,0,0);
+                                            cursor:pointer;
+                                            
+                                        }
+
+                                        #nav_3_galleryHolder{
+                                            width: 214px;
+                                            height: 0px;
+                                            position: relative;
+                                            top: 51px;
+                                            left: 49px;
+                                            overflow:hidden;
+
+                                                #thumbnail_7{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 5px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") 0 -71px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_8{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 54px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -36px -71px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_9{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 101px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -70px -71px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #nav_3_arrow{
+                                                    width: 7px;
+                                                    height: 6px;
+                                                    position: absolute;
+                                                    top: 50px;
+                                                    left: 15px;
+                                                    background:url("../images/arrow.png") center top no-repeat; 
+                                                    
+                                                }
+                                        }
+
+
+                                }
+
+                                #nav_4{
+                                    width: 214px;
+                                    height: 10px;
+                                    position: absolute;
+                                    top:13px;
+                                    left: 15px;
+                                    opacity: 1;
+
+                                        #nav_4_header{
+                                            width: 244px;
+                                            height: inherit;
+                                            position: absolute;
+                                            top: 47px;
+                                            left: 5px;
+                                            transform:scale(.9);
+                                            background: url("../images/navHeading.png") center -77px no-repeat;
+                                            opacity:1;
+                                            webkit-tap-highlight-color: rgba(0,0,0,0);
+                                            cursor:pointer;
+                                            
+                                        }
+
+                                        #nav_4_galleryHolder{
+                                            width: 214px;
+                                            height: 0px;
+                                            position: relative;
+                                            top: 67px;
+                                            left: 49px;
+                                            overflow:hidden;
+
+                                                #thumbnail_10{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 5px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") 0px -108px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_11{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 54px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -36px -108px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_12{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 101px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -70px -108px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+
+                                                }
+
+                                                #nav_4_arrow{
+                                                    width: 7px;
+                                                    height: 6px;
+                                                    position: absolute;
+                                                    top: 50px;
+                                                    left: 15px;
+                                                    background:url("../images/arrow.png") center top no-repeat;
+                                                    
+                                                }
+                                        }
+                                }
+
+                                #nav_5{
+                                    width: 214px;
+                                    height: 10px;
+                                    position: absolute;
+                                    top:19px;
+                                    left: 15px;
+                                    opacity: 1;
+
+                                        #nav_5_header{
+                                            width: 244px;
+                                            height: inherit;
+                                            position: absolute;
+                                            top: 63px;
+                                            left: 5px;
+                                            transform:scale(.9);
+                                            background: url("../images/navHeading.png") center -94px no-repeat;
+                                            opacity:1;
+                                            webkit-tap-highlight-color: rgba(0,0,0,0);
+                                            cursor:pointer;
+                                            
+                                        }
+
+                                        #nav_5_galleryHolder{
+                                            width: 214px;
+                                            height: 0px;
+                                            position: relative;
+                                            top: 83px;
+                                            left: 49px;
+                                            overflow:hidden;
+
+                                                #thumbnail_13{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 5px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") 0px -144px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_14{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 54px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -35px -144px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_15{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 101px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -70px -144px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #nav_5_arrow{
+                                                    width: 7px;
+                                                    height: 6px;
+                                                    position: absolute;
+                                                    top: 50px;
+                                                    left: 15px;
+                                                    background:url("../images/arrow.png") center top no-repeat;
+                                                    
+                                                }
+                                        }
+                                }
+
+                                #nav_6{
+                                    width: 214px;
+                                    height: 10px;
+                                    position: absolute;
+                                    top:23px;
+                                    left: 15px;
+                                    opacity: 1;
+
+                                        #nav_6_header{
+                                            width: 244px;
+                                            height: inherit;
+                                            position: absolute;
+                                            top: 79px;
+                                            left: 5px;
+                                            transform:scale(.9);
+                                            background: url("../images/navHeading.png") center -113px no-repeat;
+                                            opacity:1;
+                                            webkit-tap-highlight-color: rgba(0,0,0,0);
+                                            cursor:pointer;
+
+                                        }
+
+
+                                        #nav_6_galleryHolder{
+                                            width: 214px;
+                                            height: 0px;
+                                            position: relative;
+                                            top: 93px;
+                                            left: 49px;
+                                            overflow:hidden;
+
+                                                #thumbnail_16{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 5px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") 0px -178px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_17{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 54px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -36px -178px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #thumbnail_18{
+                                                    width: 35px;
+                                                    height: 35px;
+                                                    position: absolute;
+                                                    top: 5px;
+                                                    left: 101px;
+                                                    border:0px solid white;
+                                                    background: url("../images/thumbnail_LIB.png") -70px -178px no-repeat;
+                                                    webkit-tap-highlight-color: rgba(0,0,0,0);
+                                                    cursor:pointer;
+                                                }
+
+                                                #nav_6_arrow{
+                                                    width: 7px;
+                                                    height: 6px;
+                                                    position: absolute;
+                                                    top: 50px;
+                                                    left: 15px;
+                                                    background:url("../images/arrow.png") center top no-repeat;
+                                                    
+                                                }
+                                        }
+                                }
+                                
+
+
+                            }
+                        
+                    
+                
+                 }/* header Ends */
+
+                #section{
+                    width:681px;
+                    height: 250px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    overflow:hidden;
+
+
+                    #slide_0_Holder{
+                        width:681px;
+                        height: 250px;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        overflow:hidden;
+
+                        #introCopy_1{
+                            width:261px;
+                            height: 17px;
+                            position: absolute;
+                            top: 75px;
+                            left: 158px;
+                            opacity:0;
+                            background:url("../images/introCopy.png") 0px 0px no-repeat;
+                            z-index:601;
+                        }
+                        #introCopy_2{
+                            width: 261px;
+                            height: 17px;
+                            position: absolute;
+                            top: 41px;
+                            left: 37px;
+                            opacity: 0;
+                            background: url("../images/introCopy.png") 0px -32px no-repeat;
+                            z-index:602;
+                        }
+                        #introCopy_3{
+                            width: 261px;
+                            height: 17px;
+                            position: absolute;
+                            top: 89px;
+                            left: 255px;
+                            opacity: 0;
+                            background: url("../images/introCopy.png") 0px -53px no-repeat;
+                            z-index:603;
+                        }
+                        #introCopy_4{
+                            width: 261px;
+                            height: 17px;
+                            position: absolute;
+                            top: 77px;
+                            left: 166px;
+                            opacity: 0;
+                            background: url("../images/introCopy.png") 0px -86px no-repeat;
+                            z-index:604;
+                        }
+                        #introCopy_5{
+                            width: 261px;
+                            height: 17px;
+                            position: absolute;
+                            top: 182px;
+                            left: 61px;
+                            opacity: 0;
+                            background: url("../images/introCopy.png") 0px -108px no-repeat;
+                            z-index:605;
+                        }
+
+                        #slide_0{
+                            width:681px;
+                            height: 250px;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            opacity:0;
+                            background:url("../images/section_slide_0.jpg") 0px 0px no-repeat;
+                            z-index:600;
+                            transform:scale(1.25);
+                        }
+
+                        #slide_0_1{
+                            width:681px;
+                            height: 250px;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            opacity:0;
+                            background:url("../images/section_slide_0_1.jpg") 0px 0px no-repeat;
+                            z-index:600;
+                            transform:scale(1.25);
+                        }
+
+                    }
+                    
+                    
+                    #section_1{
+                        width:inherit;
+                        height: inherit;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        opacity:1;
+
+                        #click_1{
+                            width: 94px;
+                            height: 93px;
+                            position: absolute;
+                            top:0px;
+                            left:0px;
+                            z-index:901;
+                        }
+
+                        #slide_1{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_1_1.jpg") 0px 0px no-repeat;
+                            opacity:1;
+                        }
+
+                        #slide_2{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_1_2.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_3{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_1_3.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+
+                    }
+
+                    #section_2{
+                        width:inherit;
+                        height: inherit;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        opacity:1;
+
+                        
+
+                        #slide_4{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_2_1.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_5{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_2_2.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_6{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_2_3.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+                    }
+
+                    #section_3{
+                        width:inherit;
+                        height: inherit;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        opacity:1;
+
+                        
+                        #slide_7{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_3_1.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_8{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_3_2.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_9{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_3_3.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+                    }
+
+                    #section_4{
+                        width:inherit;
+                        height: inherit;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        opacity:1;
+
+                        
+
+                        #slide_10{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_4_1.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_11{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_4_2.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_12{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_4_3.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+                    }
+
+                    #section_5{
+                        width:inherit;
+                        height: inherit;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        opacity:1;
+
+                        
+
+                        #slide_13{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_5_1.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_14{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_5_2.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_15{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: -683px;
+                            background:url("../images/section_slide_5_3.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+                    }
+
+                    #section_6{
+                        width:inherit;
+                        height: inherit;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                        opacity:1;
+
+                        
+
+                        #slide_16{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            background:url("../images/section_slide_6_1.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_17{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            background:url("../images/section_slide_6_2.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+
+                        #slide_18{
+                            width:inherit;
+                            height: inherit;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            background:url("../images/section_slide_6_3.jpg") 0px 0px no-repeat;
+                            opacity:0;
+                        }
+                    }
+
+                
+                }
+
+                #footer{
+                    width: 294px;
+                    height: 250px;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    opacity: 1;
+                    background: url("../images/background_footer.jpg") 7px 0px no-repeat;
+                    z-index: 221;
+
+                    #background{
+                        width: @adWidth;
+                        height: 132px;
+                        position: absolute;
+                        top: 0px;
+                        left: 0px;
+                    }
+                }
+
+                #cta{
+                        width: 297px;
+                        height: 230px;
+                        position: absolute;
+                        top: 176px;
+                        left: 466px;
+                        display: block;
+                        opacity: 1;
+                        z-index: 1400;
+                        webkit-tap-highlight-color: rgba(0,0,0,0);
+                        cursor:pointer;
+
+                       
+                        #copy{
+                            width: 210px;
+                            height: 13px;
+                            top: 25px;
+                            left: 29px;
+                            position: absolute;
+                            overflow: hidden;
+                            background:url("../images/copy.png") 0px 0px no-repeat;
+                        }
+
+                        #background{
+                            width: 255px;
+                            height: 62px;
+                            top: 0px;
+                            left: 24px;
+                            position: absolute;
+                            overflow: hidden;
+                            background:url("../images/background_cta.png") 0px 0px no-repeat;
+                        
+                            #rolloverHolder{
+                                width: 218px;
+                                height: 30px;
+                                top: 13px;
+                                left: 15px;
+                                position: absolute;
+                                overflow: hidden;
+                                
+
+                                #rollover{
+                                    width: inherit;
+                                    height: inherit;
+                                    top:0;
+                                    left:220px;
+                                    position: absolute;
+                                    background:url("../images/rolloverEffect.png") 0px 0px no-repeat;
+                                    overflow: hidden;
+                                    opacity:.5;
+                                }
+
+                            }
+                        }
+
+                    }
+                    
+            
+            } /* Banner Ends */
+
+
+
+   
+    }  /* Ad Ends */
+
+    
 
