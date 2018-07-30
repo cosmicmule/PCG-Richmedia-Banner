@@ -1,6 +1,5 @@
-# html5-ad
-
-Automation, through Grunt, for a basic HTML5 ad.
+# PCG Richmedia Banner
+Image gallery that leveraged multiple sections.
 
 ## Getting Started
 1. Update `project.json` with name and ad dimensions.
@@ -27,11 +26,4 @@ avoid touching the `<head>` area unless you know what you're doing.
 - `grunt deploy`: Compile, minify, encode images to CSS, output zip to 
 `deploy/` for upload.
 
-## Future Features
-- Support for SASS option
-- Multiple deploy targets, add output for Sizmek, DoubleClick, Google Display Network, 
-Conversant, etc.  Currently only setup for Sizmek.
-- Generator to build framework/boilerplate for common sizes.
-- Autoreload.
-- Add jshint, basic functionality tests.
 
